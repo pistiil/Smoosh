@@ -1,0 +1,121 @@
+/* ----------------------- Eléments de base ----------------------- */
+h1 {
+    text-align: center;
+    color: #F6ACC5;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #F6ACC5;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+}
+
+h3 {
+    color: #484a4a;
+}
+
+p {
+    color: #484a4a;
+}
+
+
+
+
+
+/* ----------------------- Histoire ----------------------- */
+.histoire {
+    background-color: #FDE2ED;
+    margin: 30px 50px 0px 50px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.histoire h2 {
+    text-align: left;
+}
+
+.histoirecontenu {
+    display: flex;
+}
+
+.histoirecontenu div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* ----------------------- Fournisseurs ----------------------- */
+.fournisseurs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 70px 50px;
+}
+
+.fournisseurs h2 {
+    color: #b8afee;
+}
+
+.tableau {
+    display: flex;
+    padding: 0px;
+    border-collapse: collapse;
+}
+  
+.tableau td {
+    text-align: center;
+    padding: 10px; 
+    border-right: 2px solid #b8afee;
+}
+
+.tableau td:last-child {
+    text-align: center;
+    padding: 10px; 
+    border: none;
+}
+  
+.tableau tr {
+    width: 100%;
+}
+
+.tableau tr > * {
+    width: calc(100% / 3);
+}
+  
+
+  .lien {
+    color:#484a4a;
+}
+
+.lien:hover {
+    color:#F6ACC5;
+}
+
+
+
+
+
+/* ----------------------- Conditions Générales d'Utilisateur ----------------------- */
+.cgu {
+    background-color: #FDE2ED;
+    margin: 30px 50px 50px 50px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.cgu p {
+    text-align: center;
+    font-size: 12px;
+}
+
+.cgu p b {
+    font-size: 14px;
+}

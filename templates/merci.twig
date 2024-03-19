@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+
+
+
+
+{% block css %}
+<link rel="stylesheet" href="css/merci.css">
+{% endblock css %}
+
+
+
+
+
+{% block main %}
+<!-- Page de remerciement avec la possibilité de télécharger la facture et de revenir sur la page d'accueil -->
+<section class="merci">
+    <h1>{{titre1.titre1}}</h1>
+    <p>{{texte1.part1}}<a href="{{texte1.lien1}}" class="contacter" aria-label="Redirection vers la page contact">{{texte1.part2}}</a></p>
+    <a href="images/facture.jpeg" download="Facture" class="changement telecharger" aria-label="Téléchargement de la facture">{{bouton.dl}}<i class="bi bi-download"></i></a>
+    <a href="{{bouton.lien2}}" class="changement revenir" aria-label="Redirection vers la page d'accueil">{{bouton.revenir}}</a>
+</section>
+{% endblock main %}

@@ -1,0 +1,216 @@
+/* ----------------------- Eléments de base ----------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e4ebf9;
+}
+
+.page {
+    background-color: #f8f8f8;
+    width: 960px;
+    margin: 45px auto;
+    border-radius: 25px;
+}
+
+
+
+
+
+/* ----------------------- Header ----------------------- */
+header {
+    color: white;
+    background: #b8afee;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+/* Partie bannière */
+.banniere {
+    padding : 10px;
+    background-color: #b8afee;
+    font-size: 12px;
+    color: white;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.banniere q {
+    font-style: italic;
+}
+
+/* Partie navigation */
+nav {
+    background-color: #b8afee;
+    padding: 0px 50px 15px 50px;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    position: relative;
+}
+
+nav a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #FDE2ED;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -ms-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+
+@media screen and (max-height: 300px) {
+      ul {
+          margin-top: 40px;
+    }
+}
+
+
+
+
+
+/* ----------------------- Aspect visuel des boutons ----------------------- */
+.bouton {
+    display: flex;
+    gap: 10px;
+    margin: 15px;
+}
+
+.changement {
+    background-color:#b8afee;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.changement:hover {
+    background-color: #dbd6f9;
+    color:#b8afee;
+}
+
+
+
+
+
+/* ----------------------- Aspect visuel du bouton revenir en haut ----------------------- */
+.ontop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #F6ACC5;
+    color: white;
+    border-style: none;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.ontop:hover {
+    background-color: #FDE2ED;
+    color: #F6ACC5;
+}
+
+.ontop .bi {
+    color: white;
+}
+
+
+
+
+
+/* ----------------------- Footer ----------------------- */
+footer {
+    background-color: #b8afee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.lien ul {
+    list-style: none;
+}
+
+.lien li {
+    display: flex;
+    justify-content: center;
+}
+
+.lien a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+ }
+
+.lien a:hover {
+    color: #FDE2ED;
+ }
+
+/* Footer partie signature */
+footer hr {
+    color: #dee9fd;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
+
+.signature {
+    margin-top: 20px;
+    padding: 0px;
+    color: white;
+}

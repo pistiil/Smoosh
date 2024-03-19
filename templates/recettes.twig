@@ -1,0 +1,115 @@
+{% extends "pageaside.twig" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="css/categorie.css">
+<link rel="stylesheet" href="css/recettes.css">
+{% endblock css %}
+
+
+
+{% block addnav %}
+<li><a href="{{lien.lien}}" aria-label="Redirection vers la page d'une autre langue">{{lien.langue}}</a></li>
+{% endblock addnav %}
+
+
+
+
+
+{% block aside %}
+<a href="#bouteilles" aria-label="Redirection vers la 1e section"><h3>{{titre1.soustitre1}}</h3></a>
+<ul>
+    {% for element in RecettesBouteilles %}
+    <li><a href="#{{element.id}}" aria-label="Redirection vers les articles">{{element.nom}}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="#canettes" aria-label="Redirection vers la 2e section"><h3>{{titre1.soustitre2}}</h3></a>
+<ul>
+    {% for element in RecettesCanettes %}
+    <li><a href="#{{element.id}}" aria-label="Redirection vers les articles">{{element.nom}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock aside %}
+
+
+
+
+
+{% block contenu %}
+<!-- Recettes pour les bouteilles en français -->
+<section>
+    <h1 id="recettes">{{titre1.titre1}}</h1>
+    <h2 id="bouteilles">{{titre1.soustitre1}}</h2>
+    {% for article in RecettesBouteilles %}
+    <div class="recettebouteille" id="{{article.id}}">
+        <article>
+            <h3 class="titrerecette">{{article.nom}}</h3>
+            <div class="recettebouteillecontenu">
+                <div>
+                    <div>
+                        <ul>
+                            {% for element in article.ingredients %}
+                            <li>{{element}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <iframe width="189" height="106" src="{{article.video}}" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="bouteilletuto">
+                    <ol>
+                        {% for element in article.etape %}
+                        <li>{{element}}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </article>
+    </div>
+    {% endfor %}
+</section>
+
+
+<hr class="separateur">
+
+
+<!-- Recettes pour les canettes -->
+<section>
+    <h2 id="canettes">{{titre1.soustitre2}}</h2>
+    {% for article in RecettesCanettes %}
+    <div class="recettecanette" id="{{article.id}}">
+        <article>
+            <h3 class="titrerecette">{{article.nom}}</h3>
+            <div class="recettecanettecontenu">
+                <div class="canettetuto">
+                    <ol>
+                        {% for element in article.etape %}
+                        <li>{{element}}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div>
+
+                    <div>
+                        <ul>
+                            {% for element in article.ingredients %}
+                            <li>{{element}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <iframe width="189" height="106" src="{{article.video}}" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    {% endfor %}
+</section>
+{% endblock contenu %}

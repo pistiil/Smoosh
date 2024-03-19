@@ -1,0 +1,140 @@
+/* ----------------------- Eléments de base ----------------------- */
+h1 {
+    text-align: center;
+    color: #b8afee;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #F6ACC5;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 50px 0px 20px 0px;
+}
+
+
+
+
+
+/* ----------------------- Formulaire de contact ----------------------- */
+.contact {
+    background-color: #e4ebf9;
+    margin: 30px 75px;
+    padding: 30px 30px 20px 30px;
+    border-radius: 20px;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+}
+
+input {
+    padding: 5px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+textarea {
+    padding: 5px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.nom {
+    display: flex;
+    gap: 30px;
+    margin: 15px;
+}
+
+.nom input{
+    width: 100%;
+}
+
+.remplir {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.hidden {
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -10000px;
+    width: 1px;
+}
+
+
+
+
+
+/* ----------------------- Aspect visuel du bouton ----------------------- */
+.bouton {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.changement {
+    display: flex;
+    background-color:#b8afee;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.changement:hover {
+    background-color: #dbd6f9;
+    color:#b8afee;
+}
+
+
+
+
+
+/* ----------------------- Contacts ----------------------- */
+.contacttable {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 30px 70px 30px;
+}
+
+.tableau {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    border-collapse: collapse;
+  }
+  
+.tableau td {
+    text-align: center;
+    padding: 10px; 
+    border-right: 2px solid #b8afee;
+  }
+
+.tableau td:last-child {
+    text-align: center;
+    padding: 10px; 
+    border: none;
+  }
+  
+.tableau tr {
+    width: 100%;
+  }
+
+.tableau tr > * {
+    width: calc(100% / 3);
+}
+
+

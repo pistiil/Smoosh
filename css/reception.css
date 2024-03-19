@@ -1,0 +1,24 @@
+/* ----------------------- Mise en page de la page de réception des données du formulaire ----------------------- */
+.reception {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reception h2 {
+    margin: 30px;
+    color: #b8afee;
+}
+
+.reception p {
+    color: #484a4a;
+    margin-bottom: 10px;
+}
+
+.reception p:last-child {
+    margin-bottom: 0px;
+}
+
+.reception a {
+    margin: 30px;
+}

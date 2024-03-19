@@ -1,0 +1,83 @@
+{% extends "base.twig" %}
+
+{% block css %}
+<link rel="stylesheet" href="css/contact.css">
+{% endblock css %}
+
+
+
+
+
+{% block addnav %}
+<li><a href="{{lien.lien}}" aria-label="Redirection vers la page d'une autre langue">{{lien.langue}}</a></li>
+{% endblock addnav %}
+
+
+
+
+
+
+{% block main %}
+<!-- Formulaire de contact -->
+<section>
+    <div class="contact">
+        <h1>{{titre1.titre1}}</h1>
+        <div class="formulaire">
+            {% if lang == 'fr' %}
+            <form action="reception.php" method="post">
+                {% elseif lang == 'en' %}
+                <form action="receptionen.php" method="post">
+                    {% endif %}
+                    <div class="nom">
+                        <label class="hidden" for="nom">Nom :</label>
+                        <input type="text" title="{{placeholder.nom}}" id="nom" name="nom"
+                            placeholder="{{placeholder.nom}}" autocomplete="family-name" required aria-invalid="true">
+                        <label class="hidden" for="prenom">Prénom :</label>
+                        <input type="text" title="{{placeholder.prenom}}" id="prenom" name="prenom"
+                            placeholder="{{placeholder.prenom}}" autocomplete="given-name" required aria-invalid="true">
+                    </div>
+                    <div class="remplir">
+                        <label class="hidden" for="email">Email :</label>
+                        <input type="email" title="{{placeholder.mail}}" id="email" name="email"
+                            placeholder="{{placeholder.mail}}" autocomplete="email" required aria-invalid="true">
+                    </div>
+                    <div class="remplir">
+                        <label class="hidden" for="sujet">Sujet :</label>
+                        <input type="text" title="{{placeholder.sujet}}" id="sujet" name="sujet"
+                            placeholder="{{placeholder.sujet}}" required aria-invalid="true">
+                    </div>
+                    <div class="remplir">
+                        <label class="hidden" for="probleme">Décrivez votre problème :</label>
+                        <textarea id="probleme" title="{{placeholder.probleme}}" name="probleme" rows="8" cols="50"
+                            placeholder="{{placeholder.probleme}}" required aria-invalid="true"></textarea>
+                    </div>
+                    <div class="bouton">
+                        {% if lang == 'fr' %}
+                        <input type="submit" class="changement" value="Envoyer">
+                        {% elseif lang == 'en' %}
+                        <input type="submit" class="changement" value="Submit">
+                        {% endif %}
+                    </div>
+                </form>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>CONTACT</h2>
+    <div class="contacttable">
+        <table class="tableau" role="presentation">
+            <tr>
+                {% for element in contact %}
+                <td>
+                    <p><i class="{{element.icon}}"></i></p>
+                    <p>{{element.contenu}}</p>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+{% endblock main %}

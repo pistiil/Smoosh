@@ -1,0 +1,82 @@
+{% extends "base.twig" %}
+
+{% block css %}
+<link rel="stylesheet" href="css/apropos.css">
+{% endblock css %}
+
+
+
+
+
+{% block addnav %}
+<li><a href="{{lien.lien}}" aria-label="Redirection vers la page d'une autre langue">{{lien.langue}}</a></li>
+{% endblock addnav %}
+
+
+
+
+
+{% block main %}
+<h1>{{titre1.titre1}}</h1>
+<!-- Histoire -->
+<section>
+    <div class="histoire">
+        <h2>{{titre1.soustitre1}}</h2>
+        <div class="histoirecontenu">
+            <p>{{textehist.paragraphe}}</p>
+            <div>
+                <iframe width="252" height="142" src="https://www.youtube.com/embed/6ISqwC1-N-4?si=pgIJSGNsx6J9AkB4"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe width="252" height="142" src="https://www.youtube.com/embed/YyjnehnU9Zs?si=kq0y1NLlRwezdl_l"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Fournisseurs -->
+<section>
+    <div class="fournisseurs">
+        <h2>{{titre1.soustitre2}}</h2>
+        <div>
+            <table class="tableau" role="presentation">
+                <tr>
+                    {% for element in fournisseurs %}
+                    <td>
+                        <h3>{{element.nom}}</h3>
+                        <p>{{element.adresse}}</p>
+                        <p>{{element.numero}}</p>
+                        <p>{{element.mail}}</p>
+                        <a href="{{element.site}}" target="_blank" class="lien" aria-label="Redirection vers le site du fournisseur">Site du Fournisseur</a>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<!-- Conditions Générales d'Utilisateurs -->
+<section>
+    <div class="cgu">
+        <h2>{{titre1.soustitre3}}</h2>
+        <p>{{textecgu.intro}}</p>
+        <p><b>{{textecgu.nomcat1}}</b></p>
+        <p>{{textecgu.cat1.texte1}}</p>
+        <p>{{textecgu.cat1.texte2}}</p>
+        <p><b>{{textecgu.nomcat2}}</b></p>
+        <p>{{textecgu.cat2.texte1}}</p>
+        <p>{{textecgu.cat2.texte2}}</p>
+        <p><b>{{textecgu.nomcat3}}</b></p>
+        <p>{{textecgu.cat3}}</p>
+        <p><b>{{textecgu.nomcat4}}</b></p>
+        <p>{{textecgu.cat4}}</p>
+    </div>
+</section>
+{% endblock main %}

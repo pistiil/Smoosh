@@ -1,0 +1,144 @@
+/* ----------------------- Eléments de base ----------------------- */
+h1 {
+    text-align: center;
+    color: #F6ACC5;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+h2 {
+    text-align: center;
+    color: #F6ACC5;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #484a4a;
+}
+
+p {
+    color: #484a4a;
+}
+
+.separateur {
+    margin: 50px;
+}
+
+.separateur:last-child {
+    opacity: 0;
+    margin: 15px 50px;
+}
+
+
+
+
+
+/* ----------------------- Canettes à acheter à l'unité ----------------------- */
+.canette {
+    display: flex;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.produit {
+    background-color: #e4ebf9;
+    width: 210px;
+    margin-right: 0px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.produitcontenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.gout {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.acheter {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+/* Effet pour l'avis client */
+.star {
+    transition: 1s ease;
+    color: #b8afee;
+    margin-left: 10px;
+}
+
+.avis-client {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e4ebf9;
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.avis-client h4 {
+    font-size: 12px;
+}
+
+.avis-client p {
+    font-size: 10px;
+}
+
+
+.star:hover {
+    scale: 1.1;
+}
+
+.star:hover .avis-client {
+    opacity: 1;
+    transition: 1s ease;
+}
+
+
+
+
+
+/* ----------------------- Aspect visuel des boutons ----------------------- */
+.changement {
+    background-color:#b8afee;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+

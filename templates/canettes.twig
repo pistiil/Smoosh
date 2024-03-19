@@ -1,0 +1,77 @@
+{% extends "pageaside.twig" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="css/categorie.css">
+<link rel="stylesheet" href="css/canettes.css">
+{% endblock css %}
+
+
+
+{% block addnav %}
+<li><a href="{{lien.lien}}" aria-label="Redirection vers la page d'une autre langue">{{lien.langue}}</a></li>
+{% endblock addnav %}
+
+
+
+
+
+{% block aside %}
+<a href="#canettes" aria-label="Redirection vers la section"><h3>{{titre1.titre1}}</h3></a>
+<ul>
+    {% for element in Canette %}
+    <li><a href="#{{element.id}}" aria-label="Redirection vers les articles">{{element.nom}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock aside %}
+
+
+
+
+
+{% block contenu %}
+<!-- Canettes à acheter à l'unité -->
+<section>
+    <h1 id="canettes">{{titre1.titre1}}</h1>
+    {% for article in Canette %}
+    <article id="{{article.id}}">
+        <div class="canette">
+            <div class="images">
+                <img src="images/{{article.image}}" class="produit" alt="{{article.nom}}">
+            </div>
+            <div class="produitcontenu">
+                <div>
+                    <h3>{{article.nom}}</h3>
+                    <p><b>{{article.prix}}</b></p>
+                    <p class="description">{{article.description}}</p>
+                    
+                    <div class="gout">
+                        <p>{{article.titre}}</p>
+                        <ul>
+                            {% for element in article.gout %}
+                            <li>{{element}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="star">
+                {% for element in article.avis %}
+                <i class="{{element}}"></i>
+                {% endfor %}
+                <div class="avis-client">
+                    <h4>{{article.nomclient}}</h4>
+                    <p>{{article.avisclient}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="acheter">
+            <a href="{{article.lien}}" target="_blank" class="changement" aria-label="Acheter le produit">{{article.acheter}}</a>
+        </div>
+    </article>
+    <hr class="separateur">
+
+
+    {% endfor %}
+</section>
+{% endblock contenu %}

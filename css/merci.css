@@ -1,0 +1,46 @@
+/* ----------------------- Eléments de base ----------------------- */
+.merci {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #484a4a;
+}
+
+p {
+    color: #484a4a;
+}
+
+
+
+
+
+/* ----------------------- Lien vers la page Contact ----------------------- */
+.contacter {
+    text-decoration: underline;
+    color:#F6ACC5;
+    font-weight: 700;
+}
+
+
+
+
+
+/* ----------------------- Aspects visuel des boutons ----------------------- */
+.telecharger {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.revenir {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    margin-top: 50px;
+}

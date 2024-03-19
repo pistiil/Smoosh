@@ -1,0 +1,118 @@
+{% extends "pageaside.twig" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="css/categorie.css">
+<link rel="stylesheet" href="css/bouteilles.css">
+{% endblock css %}
+
+
+
+{% block addnav %}
+<li><a href="{{lien.lien}}" aria-label="Redirection vers la page d'une autre langue">{{lien.langue}}</a></li>
+{% endblock addnav %}
+
+
+
+
+
+{% block aside %}
+<a href="#bouteilles" aria-label="Redirection vers la 1e section"><h3>{{titre1.titre1}}</h3></a>
+<ul>
+    {% for element in Bouteille %}
+    <li><a href="#{{element.id}}" aria-label="Redirection vers les articles">{{element.nom}}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="#bouteilleslot" aria-label="Redirection vers la 2e section"><h3>{{titre1.soustitre1}}</h3></a>
+<ul>
+    {% for element in Bouteilles %}
+    <li><a href="#{{element.id}}" aria-label="Redirection vers les articles">{{element.nom}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock aside %}
+
+
+
+
+
+{% block contenu %}
+<!-- Bouteilles à acheter à l'unité -->
+<h1 id="bouteilles">{{titre1.titre1}}</h1>
+<section>
+    {% for article in Bouteille %}
+    <article id="{{article.id}}">
+        <div class="unite">
+            <div class="zoom">
+                <img src="images/{{article.image}}" class="produit" alt="{{article.nom}}">
+                <p><span>{{article.prix}}</span></p>
+            </div>
+            <div>
+                <div class="description">
+                    <h3>{{article.nom}}</h3>
+                    <p>{{article.description}}</p>
+                    <img src="images/{{article.nutriscore}}" class="nutriscore" alt="Nutriscore">
+                </div>
+                <div class="bouton acheter">
+                    <a href="#bouteilleslot" class="changement" aria-label="Acheter le produit en lot">{{article.bouton1}}</a>
+                    <a href="{{article.lien}}" target="_blank" class="changement" aria-label="Acheter le produit">{{article.bouton2}}</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr class="separateur">
+    {% endfor %}
+</section>
+
+
+
+<section class="carousel-section">
+    <!-- Bouteilles à acheter en lot, carousel d'articles -->
+    <h2 id="bouteilleslot">{{titre1.soustitre1}}</h2>
+
+    <button class="prev changement" onclick="changeArticle(-1)"><i class="bi bi-arrow-left-short"></i></button>
+    <div class="carousel">
+        <div class="carousel-inner">
+            {% for articlelot in Bouteilles %}
+            <article id="{{articlelot.id}}" class="article">
+                <div class="centre">
+                    <img class="centreimage" src="images/{{articlelot.image}}" alt="{{articlelot.nom}}">
+                    <div>
+                        <h3>{{articlelot.nom}}</h3>
+                        <p>{{articlelot.prix}}</p>
+                        <a href="{{articlelot.lien}}" target="_blank" class="changement" aria-label="Acheter le produit">{{articlelot.bouton1}}</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+    <button class="next changement" onclick="changeArticle(1)"><i class="bi bi-arrow-right-short"></i></button>
+</section>
+
+
+
+<!-- Script carousel -->
+<script>
+    let currentArticle = 0;
+    showArticle(currentArticle);
+
+    function changeArticle(n) {
+        showArticle(currentArticle += n);
+    }
+
+    function showArticle(n) {
+        const articles = document.getElementsByClassName("article");
+        if (n >= articles.length) {
+            currentArticle = 0;
+        }
+        if (n < 0) {
+            currentArticle = articles.length - 1;
+        }
+        for (let i = 0; i < articles.length; i++) {
+            articles[i].style.display = "none";
+        }
+        articles[currentArticle].style.display = "block";
+    }
+</script>
+{% endblock contenu %}

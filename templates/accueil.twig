@@ -1,0 +1,82 @@
+{% extends "base.twig" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="css/accueil.css">
+{% endblock css %}
+
+
+
+{% block addnav %}
+<li><a href="{{lien.lien}}" aria-label="Redirection vers la page d'une autre langue">{{lien.langue}}</a></li>
+{% endblock addnav %}
+
+
+
+
+
+{% block main %}
+<!-- Carousel -->
+<section>
+    <div class="carousel-container">
+        <div class="slides">
+            <img class="slide" src="images/banniere1.png" alt="Save Your Energy">
+            <img class="slide" src="images/bannierenew.png" alt="New SipSmooth">
+        </div>
+    </div>
+</section>
+
+<!-- Best-Seller -->
+<section>
+    <h1>{{titre1.soustitre1}}</h1>
+    <div class="bestseller">
+        {% for element in bestseller %}
+        <div>
+            <div class="imgbest">
+                <img src="images/{{element.image}}" alt="{{element.nom}}">
+            </div>
+            <div class="bouton">
+                <a href="{{element.lien1}}" class="changement" aria-label="En savoir plus sur le produit">{{element.bouton1}}</a>
+                <a href="{{element.lien2}}" target="_blank" class="changement" aria-label="Acheter le produit">{{element.bouton2}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+
+
+<!-- Histoire de la marque -->
+<section class="histoire">
+    <h2>{{titre1.soustitre2}}</h2>
+    {% for element in histoire %}
+    <p>{{element.paragraphe}}</p>
+    {% endfor %}
+</section>
+
+
+
+
+
+<!-- Script pour le fonctionnement du carousel -->
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const slideWidth = slides[0].clientWidth;
+        document.querySelector('.slides').style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+    }
+
+    setInterval(nextSlide,5000);
+</script>
+
+{% endblock main %}

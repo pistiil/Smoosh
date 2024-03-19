@@ -1,0 +1,98 @@
+/* -------------------- Éléments de base -------------------- */
+h1 {
+    text-align: center;
+    color: #b8afee;
+    font-weight: 800;
+    margin-bottom: 70px;
+}
+
+h2 {
+    text-align: center;
+    color: #b8afee;
+    font-weight: 800;
+}
+
+.titrerecette {
+    text-align: left;
+    color: #F6ACC5;
+}
+
+.separateur {
+    margin: 100px 75px 50px 75px;
+}
+
+section ul {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+ul li {
+    color: #484a4a;
+    font-size: 12px;
+}
+
+ol li {
+    color: #484a4a;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* ----------------------- Recettes pour les bouteilles ----------------------- */
+.recettebouteille {
+    background-color: #FDE2ED;
+    margin: 30px 50px 0px 50px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.recettebouteillecontenu {
+    display: flex;
+}
+
+.recettebouteillecontenu div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.bouteilletuto {
+    margin-left: 20px;
+    margin-top: 15px;
+    border-left: 2px solid #F6ACC5;
+    padding-left: 30px;
+}
+
+
+
+
+
+/* ----------------------- Recettes pour les canettes ----------------------- */
+.recettecanette {
+    background-color: #FDE2ED;
+    margin: 30px 50px 0px 50px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.recettecanettecontenu {
+    display: flex;
+}
+
+.recettecanettecontenu div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+iframe {
+    margin-top: 30px;
+}
+
+.canettetuto {
+    margin-right: 20px;
+    border-right: 2px solid #F6ACC5;
+    padding: 0px 30px;
+}

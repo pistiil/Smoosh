@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block css %}
+<link rel="stylesheet" href="css/reception.css">
+{% endblock css %}
+
+
+
+
+
+{% block main %}
+    <section class="reception">
+        <h2>CONFIRMATION</h2>
+        <p class="names-text">{{texte1.part1}} {{ data.nom }} {{ data.prenom }} {{texte1.part2}}</p> 
+        <p class="message-text">{{texte1.part3}}</p>
+        <p class="mail-text">{{texte1.part4}} {{ data.email }}</p>
+        <a href="{{bouton.lien}}" class="changement revenir" aria-label="Redirection vers la page d'accueil">{{bouton.nom}}</a>
+    </section>
+{% endblock main %}
